@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-text="pageTitle">Villager Selection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 data-text="header.title">Villager Selection</h1>
+            <p class="subtitle" data-text="header.subtitle">Select 3 villagers to view the corresponding diagram</p>
+        </header>
+        
+        <main class="content">
+            <section class="villagers-section">
+                <h2 data-text="sections.villagers.title">Villagers</h2>
+                <div class="villagers-grid" id="villagersGrid">
+                    <!-- Villagers will be dynamically loaded here -->
+                </div>
+                <div class="selection-info">
+                    <span id="selectionCount">0</span> <span data-text="sections.villagers.selectionInfo">/ 3 selected</span>
+                </div>
+            </section>
+            
+            <section class="diagram-section">
+                <h2 data-text="sections.diagram.title">Diagram</h2>
+                <div class="diagram-container" id="diagramContainer">
+                    <div class="placeholder">
+                        <div class="placeholder-icon" data-text="sections.diagram.placeholder.icon">📊</div>
+                        <p data-text="sections.diagram.placeholder.message">Select exactly 3 villagers to view the diagram</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 

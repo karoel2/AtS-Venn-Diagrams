@@ -1,0 +1,301 @@
+/* Modern CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: white;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Main Content Layout */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    flex: 1;
+}
+
+/* Section Styles */
+.villagers-section,
+.diagram-section {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.villagers-section h2,
+.diagram-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #2d3748;
+    font-weight: 600;
+}
+
+/* Villagers Grid */
+.villagers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.villager-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    background: #f7fafc;
+    position: relative;
+    overflow: hidden;
+}
+
+.villager-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    background: #edf2f7;
+}
+
+.villager-card.selected {
+    border-color: #4299e1;
+    background: #ebf8ff;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(66, 153, 225, 0.3);
+}
+
+.villager-card.selected::before {
+    content: '✓';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #4299e1;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.villager-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.villager-card:hover .villager-image {
+    transform: scale(1.1);
+}
+
+.villager-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #4a5568;
+    text-align: center;
+}
+
+/* Selection Indicator */
+.selection-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #e2e8f0;
+    margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.villager-card.selected .selection-dot {
+    background: #4299e1;
+    transform: scale(1.2);
+}
+
+/* Selection Info */
+.selection-info {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #4a5568;
+    padding: 1rem;
+    background: #f7fafc;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+}
+
+#selectionCount {
+    color: #4299e1;
+    font-weight: 700;
+}
+
+/* Diagram Container */
+.diagram-container {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    overflow: hidden;
+    background: #f7fafc;
+    border: 2px dashed #e2e8f0;
+    position: relative;
+}
+
+.diagram-container.showing-diagram {
+    border: none;
+    background: white;
+}
+
+.diagram-image {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.5s ease;
+}
+
+/* Placeholder */
+.placeholder {
+    text-align: center;
+    color: #a0aec0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.placeholder-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.placeholder p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    max-width: 300px;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .villagers-grid {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+    }
+    
+    .villager-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    .villagers-section,
+    .diagram-section {
+        padding: 1.5rem;
+    }
+    
+    .diagram-container {
+        height: 300px;
+    }
+}
+
+/* Animation for diagram appearance */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.diagram-image {
+    animation: fadeInScale 0.5s ease-out;
+}
+
+/* Loading animation for villager cards */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.villager-card.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+} 
