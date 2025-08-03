@@ -4,37 +4,37 @@ const MAX_SELECTIONS = 3;
 
 // Text content - hardcoded for easy editing
 const textContent = {
-    pageTitle: "Species Complex Needs Diagram",
-    header: {
-        title: "Species Complex Needs Diagram",
-        subtitle: "Select 3 species to view the corresponding diagram"
+    "pageTitle": "Species Complex Needs Diagram",
+    "header": {
+      "title": "Species Complex Needs Diagram",
+      "subtitle": "Select 3 species to view the corresponding diagram"
     },
-    sections: {
-        villagers: {
-            title: "Species",
-            selectionInfo: "/ 3 selected"
+    "sections": {
+      "villagers": {
+        "title": "Species",
+        "selectionInfo": "/ 3 selected"
+      },
+      "diagram": {
+        "title": "Venn Diagram",
+        "placeholder": {
+          "icon": "📊",
+          "message": "Select exactly 3 species to view the diagram"
         },
-        diagram: {
-            title: "Venn Diagram",
-            placeholder: {
-                icon: "📊",
-                message: "Select exactly 3 species to view the diagram"
-            },
-            errorMessage: "Diagram not found for selected species"
-        }
+        "errorMessage": "Diagram not found for selected species"
+      }
     },
-    villagers: {
-        namePrefix: "Species",
-        altTextPrefix: "Species",
-        names: ["Humans", "Beavers", "Lizards", "Harpies", "Foxes", "Frogs", "Bats"]
+    "villagers": {
+      "namePrefix": "Species",
+      "altTextPrefix": "Species",
+      "names": ["Humans", "Lizards", "Beavers", "Harpies", "Foxes", "Frogs", "Bats"]
     },
-    notifications: {
-        maxSelections: "You can only select up to 3 species"
+    "notifications": {
+      "maxSelections": "You can only select up to 3 species"
     },
-    diagrams: {
-        altTextPrefix: "Diagram for species"
+    "diagrams": {
+      "altTextPrefix": "Diagram for species"
     }
-};
+  } ;
 
 // DOM elements
 const villagersGrid = document.getElementById('villagersGrid');
